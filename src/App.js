@@ -11,7 +11,12 @@ import { useState } from 'react';
 
 function App() {
 
-  const [counter, setCounter] = useState (5)
+  const [counter, setCounter] = useState (0)
+
+  const handleClick = () => {
+    console.log('hiciste click');
+    setCounter(counter + 1) 
+  }
 
 
   return (
@@ -22,6 +27,8 @@ function App() {
           <div className='my-2'>
           <strong>Contador: {counter}</strong>
           </div>
+
+          <button onClick={handleClick} className='btn btn-primary my-4'>Click</button>
 
           <ItemListContainer/>
           <Routes>
